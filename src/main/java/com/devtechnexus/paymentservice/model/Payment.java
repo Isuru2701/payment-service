@@ -6,6 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 /**
@@ -30,6 +34,14 @@ public class Payment {
     private float amount;
 
     @Column(name="datetime")
+    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp datetime;
 
+    @Column(name="status")
+    private String status;
+
+    public String parseTimestamp() {
+        return datetime.toInstant().atZone(ZoneId.of("UTC")).toLocalDateTime().toString() + " UTC";
+
+    }
 }
