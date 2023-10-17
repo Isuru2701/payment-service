@@ -10,13 +10,16 @@ Code for the payment management service for the e-commerce application.
 ```mermaid
 graph TD
     A(Customer checkout) -->|places order on| B(Shop)
-    note1>store payment info in db] --- B
+    B --- note1>store payment info in db]
     B --> |forwards info to| C(Payment gateway) -.-> D(Risk check)
-    note2>no need to worry about the following steps] --- E
+    note2>no need to worry about the following steps] ---E
     C --> E(Acquiring bank a.k.a Merchant's bank)
     E --> F(Card scheme ex. visa, master, etc)
     F --> G(Issuer bank a.ka. Customer's bank)
-    G -.-> |response| A
+    G --> if{approved?} --> |yes| H(update ledger & wallet)
+    
+    if --> |no| I(halt) --> |failure| A
+    H --> |success|A
     
 ```
 
