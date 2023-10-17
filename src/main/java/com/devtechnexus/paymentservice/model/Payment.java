@@ -40,6 +40,9 @@ public class Payment {
     @Column(name="status")
     private String status;
 
+    /**
+     * @return Datetime as UTC
+     */
     public String parseTimestamp() {
         return datetime.toInstant().atZone(ZoneId.of("UTC")).toLocalDateTime() + " UTC";
 
