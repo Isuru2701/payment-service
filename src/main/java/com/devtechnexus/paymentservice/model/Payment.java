@@ -41,7 +41,7 @@ public class Payment {
     private String status;
 
     public String parseTimestamp() {
-        return datetime.toInstant().atZone(ZoneId.of("UTC")).toLocalDateTime().toString() + " UTC";
+        return datetime.toInstant().atZone(ZoneId.of("UTC")).toLocalDateTime() + " UTC";
 
     }
 }
