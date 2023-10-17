@@ -11,7 +11,11 @@ Code for the payment management service for the e-commerce application.
 graph TD
     A(Customer) -->|places order on| B(Merchant)
     B --> C(Payment gateway) -.-> D(Risk check)
-    C --> E(Acquiring bank)
+    note>no need to worry about the following steps] --- E
+    C --> E(Acquiring bank a.k.a Merchant's bank)
+    E --> F(Card scheme ex. visa, master, etc)
+    F --> G(Issuer bank a.ka. Customer's bank)
+    
 ```
 
 ## Database
