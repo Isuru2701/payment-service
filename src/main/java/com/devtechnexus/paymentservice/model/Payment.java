@@ -2,20 +2,19 @@ package com.devtechnexus.paymentservice.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Date;
 
 /**
  * Entity class for payment service
- * Fields:
  *
+ * <h3>Fields</h3>
+ * <li>int id</li>
+ * <li>int userId</li>
+ * <li>float amount</li>
+ * <li>Timestamp datetime</li>
+ * <li>String status</li>
  *
  */
 @Data
