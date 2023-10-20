@@ -14,7 +14,7 @@ public class PaymentTest {
         Timestamp timestamp = Timestamp.valueOf(LocalDateTime.of(2023, Month.OCTOBER, 17, 17, 14));
 
         // Create a Payment object
-        Payment payment = new Payment();
+        PaymentRecord payment = new PaymentRecord();
         payment.setDatetime(timestamp);
 
         // Call the parseTimestamp method and validate the result

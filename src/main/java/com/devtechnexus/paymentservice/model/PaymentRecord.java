@@ -20,7 +20,7 @@ import java.time.ZoneId;
 @Data
 @Entity
 @Table(name="payment_record")
-public class Payment {
+public class PaymentRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
