@@ -10,7 +10,10 @@ import lombok.NoArgsConstructor;
 public class PaymentDto {
     private double price;
     private String currency;
+    private String method;
     private String intent;
     private String description;
+    private String cancelUrl;
+    private String successUrl;
 
 }
