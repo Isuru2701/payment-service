@@ -41,5 +41,5 @@ create table payment_record(
 ## Important
 >  Sensitive credentials are stored in the .env file. 
 > <br>
-> In order to run the application, create a .env file at the root folder, sign up for a sandbox paypal account
-> and add the CLIENT_ID and CLIENT_SECRET to the .env file.
+> In order to run the application, create a secrets.properties file at the same folder as application.properties, sign up for a sandbox paypal account
+> and add the CLIENT_ID and CLIENT_SECRET to the secrets.properties file.
