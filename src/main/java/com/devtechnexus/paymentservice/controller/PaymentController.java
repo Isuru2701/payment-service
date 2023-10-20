@@ -21,16 +21,21 @@ public class PaymentController {
     public static final String CANCEL_URL = "pay/cancel";
 
     @GetMapping(path = "/process")
-    public Payment makePayment(PaymentDto payment) throws PayPalRESTException {
-        return paymentService.createPayment(payment.getPrice(),
-                payment.getCurrency(),
-                payment.getMethod(),
-                payment.getIntent(),
-                payment.getDescription(),
-                CANCEL_URL,
-                SUCCESS_URL
+    public Payment makePayment(PaymentDto payment)  {
+        try {
+            return paymentService.createPayment(payment.getPrice(),
+                    payment.getCurrency(),
+                    payment.getMethod(),
+                    payment.getIntent(),
+                    payment.getDescription(),
+                    CANCEL_URL,
+                    SUCCESS_URL
 
-        );
+            );
+        }
+        catch(PayPalRESTException e) {
+            return null;
+        }
 
     }
 }
