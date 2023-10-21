@@ -1,7 +1,9 @@
 package com.devtechnexus.paymentservice.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.sql.Timestamp;
 import java.time.ZoneId;
@@ -22,6 +24,20 @@ import java.time.ZoneId;
 @Table(name="payment_record")
 public class PaymentRecord {
 
+    public PaymentRecord() {
+    }
+
+    public PaymentRecord(int uid, int oid, double amount, Timestamp datetime, String status, String payment_id, String currency, String description) {
+        this.userId = uid;
+        this.orderId = oid;
+        this.amount = amount;
+        this.datetime = datetime;
+        this.status = status;
+        this.payment_id = payment_id;
+        this.currency = currency;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -33,7 +49,7 @@ public class PaymentRecord {
     private int orderId;
 
     @Column(name="amount")
-    private float amount;
+    private double amount;
 
     @Column(name="datetime")
     @Temporal(TemporalType.TIMESTAMP)
@@ -47,6 +63,9 @@ public class PaymentRecord {
 
     @Column(name="currency")
     private String currency;
+
+    @Column(name="description")
+    private String description;
 
 
     /**

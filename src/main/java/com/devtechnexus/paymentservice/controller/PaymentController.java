@@ -43,7 +43,7 @@ public class PaymentController {
                     HOST + SUCCESS_URL
             );
 
-            ledgerService.createLedgerEntry(payment.getUid(), payment.getOid(), payment.getPrice(), payment.getCurrency(), payment.getDescription());
+            ledgerService.createLedgerEntry(payment);
 
             for (Links link : paymentResponse.getLinks()) {
                 if (link.getRel().equals("approval_url")) {
