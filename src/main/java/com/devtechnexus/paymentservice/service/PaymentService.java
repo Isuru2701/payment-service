@@ -63,7 +63,7 @@ public class PaymentService {
         urls.setReturnUrl(successUrl);
         payment.setRedirectUrls(urls);
 
-        System.out.println("Payment created: " + payment.toJSON());
+        System.out.println("Payment created: ");
         return payment.create(apiContext);
     }
 

@@ -36,7 +36,11 @@ public class LedgerService {
     /**
      * run when payment is COMPLETED or CANCELLED
      */
-    public void updateLedgerEntry() {
+    public void successLedgerEntry(int uid, int oid, String paymentid) {
+        PaymentRecord paymentRecord = paymentRepository.findByUserIdAndOrderId(uid, oid);
+        paymentRecord.setStatus("COMPLETED");
+        paymentRecord.setPayment_id(paymentid);
+        paymentRepository.save(paymentRecord);
 
     }
 

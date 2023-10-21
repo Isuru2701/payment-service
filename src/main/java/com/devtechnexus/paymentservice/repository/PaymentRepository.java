@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<PaymentRecord, Integer> {
+
+    public PaymentRecord findByUserIdAndOrderId(int uid, int oid);
 }
