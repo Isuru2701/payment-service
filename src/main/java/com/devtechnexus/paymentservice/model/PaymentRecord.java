@@ -29,12 +29,25 @@ public class PaymentRecord {
     @Column(name="user_id")
     private int userId;
 
+    @Column(name="order_id")
+    private int orderId;
+
     @Column(name="amount")
     private float amount;
 
     @Column(name="datetime")
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp datetime;
+
+    @Column(name="status")
+    private String status;
+
+    @Column(name="payment_id")
+    private String payment_id;
+
+    @Column(name="currency")
+    private String currency;
+
 
     /**
      * @return Datetime as UTC

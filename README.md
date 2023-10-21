@@ -41,6 +41,7 @@ amount DECIMAL not null,
 datetime TIMESTAMP not null,
 status VARCHAR(10) not null,
 payment_id VARCHAR(255),
+currency VARCHAR(4) not null,
 primary key(id)
 );
 
