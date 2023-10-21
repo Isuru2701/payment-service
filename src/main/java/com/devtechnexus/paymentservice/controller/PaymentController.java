@@ -16,9 +16,9 @@ public class PaymentController {
     private PaymentService paymentService;
 
 
-    private static final String HOST = "http://localhost:8084/";
-    private static final String SUCCESS_URL = "payments/success";
-    private static final String CANCEL_URL = "payments/cancel";
+    private static final String HOST = "http://localhost:8084/payments/";
+    private static final String SUCCESS_URL = "success";
+    private static final String CANCEL_URL = "cancel";
 
     /**
      * createPayment
@@ -28,7 +28,8 @@ public class PaymentController {
      *
      */
     @PostMapping(path = "/process")
-    public String createPayment(PaymentDto payment) {
+    public String createPayment(@RequestBody PaymentDto payment) {
+        System.out.println("Payment: " + payment.toString());
         try {
             Payment paymentResponse = paymentService.createPayment(payment.getPrice(),
                     payment.getCurrency(),

@@ -38,10 +38,10 @@ public class PaymentService {
         transactionList.add(transaction);
 
         Payer payer = new Payer();
-        payer.setPaymentMethod(method.toString());
+        payer.setPaymentMethod(method);
 
         Payment payment = new Payment();
-        payment.setIntent(intent.toString());
+        payment.setIntent(intent);
         payment.setPayer(payer);
         payment.setTransactions(transactionList);
 
@@ -50,6 +50,7 @@ public class PaymentService {
         urls.setReturnUrl(successUrl);
         payment.setRedirectUrls(urls);
 
+        System.out.println("Payment created: " + payment.toJSON());
         return payment.create(apiContext);
     }
 
