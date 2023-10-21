@@ -17,6 +17,9 @@ public class PaymentService {
     @Autowired
     private APIContext apiContext;
 
+    @Autowired
+    private LedgerService ledgerService;
+
     public Payment createPayment(Double total,
                                  String currency,
                                  String method,
@@ -61,10 +64,6 @@ public class PaymentService {
         paymentExecutor.setPayerId(payerId);
         return payment.execute(apiContext, paymentExecutor);
 
-
-    }
-
-    public void updateLedger(){
 
     }
 
