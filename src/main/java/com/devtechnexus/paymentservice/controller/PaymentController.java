@@ -97,6 +97,7 @@ public class PaymentController {
 
     @GetMapping(CANCEL_URL)
     public String cancel(){
+        ledgerService.cancelLedgerEntry(userid, orderid);
         return "cancel";
     }
 

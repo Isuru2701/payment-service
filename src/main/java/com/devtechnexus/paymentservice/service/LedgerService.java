@@ -44,4 +44,10 @@ public class LedgerService {
 
     }
 
+    public void cancelLedgerEntry(int uid, int oid) {
+        PaymentRecord paymentRecord = paymentRepository.findByUserIdAndOrderId(uid, oid);
+        paymentRecord.setStatus("CANCELLED");
+        paymentRepository.save(paymentRecord);
+    }
+
 }
