@@ -36,9 +36,6 @@ public class PaymentRecord {
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp datetime;
 
-    @Column(name="status")
-    private String status;
-
     /**
      * @return Datetime as UTC
      */
