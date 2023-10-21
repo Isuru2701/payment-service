@@ -34,12 +34,14 @@ graph TD
 create database payment;
 
 create table payment_record(
-   id INT not null auto_increment,
-   user_id INT not null,
-   amount DECIMAL not null,
-   datetime TIMESTAMP not null,
-   status VARCHAR(10) not null,
-   primary key(id)
+id INT not null auto_increment,
+user_id INT not null,
+order_id INT not null,
+amount DECIMAL not null,
+datetime TIMESTAMP not null,
+status VARCHAR(10) not null,
+payment_id VARCHAR(255),
+primary key(id)
 );
 
 ```
