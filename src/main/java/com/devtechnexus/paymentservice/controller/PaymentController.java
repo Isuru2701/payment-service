@@ -22,7 +22,9 @@ public class PaymentController {
     private int userid, orderid;
 
 
-    private static final String HOST = "http://localhost:8084/payments/";
+    //local : http://localhost:8084/payments/
+    //deployed: https://expertmobile-paymentservice.azurewebsites.net/payments/
+    private static final String HOST = "https://expertmobile-paymentservice.azurewebsites.net/payments/";
     private static final String SUCCESS_URL = "success";
     private static final String CANCEL_URL = "cancel";
 
